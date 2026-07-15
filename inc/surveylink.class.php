@@ -21,11 +21,15 @@ class PluginSatisfacaoSurveyLink
    {
       global $CFG_GLPI;
 
-      $salt = bin2hex(random_bytes(5));
-      $this->satisfaction_hash = crypt(
-         sprintf('?user=%s&ticket=%d', $this->user_id, $this->ticket_id),
-         $salt
-      );
+      // --- Old token generation (weak: crypt() falls back to legacy DES,
+      //     keeps only 2 salt chars + 8 input chars, so it's guessable) ---
+      // $salt = bin2hex(random_bytes(5));
+      // $this->satisfaction_hash = crypt(
+      //    sprintf('?user=%s&ticket=%d', $this->user_id, $this->ticket_id),
+      //    $salt
+      // );
+      // --- New token: 256 bits of cryptographic randomness, unguessable ---
+      $this->satisfaction_hash = bin2hex(random_bytes(32));
 
       $this->satisfaction_survey_link = sprintf(
          "%s/plugins/satisfacao/front/responsepage.form.php?satisfaction=%s",
@@ -83,5 +87,21 @@ class PluginSatisfacaoSurveyLink
       }
 
       return $ticket_id;
+   }
+
+   /**
+    * Deletes a survey hash so the link becomes single-use.
+    *
+    * @param string $satisfaction_survey_hash
+    * @return void
+    */
+   public static function deleteSatisfactionSurveyHash(string $satisfaction_survey_hash): void
+   {
+      global $DB;
+
+      $DB->delete(
+         self::SATISFACAO_SURVEY_HASHES_TABLE,
+         ['satisfaction_survey_hash' => $satisfaction_survey_hash]
+      );
    }
 }
