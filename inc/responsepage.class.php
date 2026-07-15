@@ -6,14 +6,14 @@ class PluginSatisfacaoResponsePage extends CommonDBTM
       $ticket_id = PluginSatisfacaoSurveyLink::getTicketIdBySatisfactionSurveyHash($_GET['satisfaction'] ?? '');
       
       if (!$this->satisfactionSurveyValidation() || empty($ticket_id)) {
-         return '<div style="text-align: center;">' . __('Desculpe, algo deu errado. Entre em contato com o administrador da página.', 'satisfacao') . '</div>';
+         return '<div style="text-align: center;">' . __('Sorry, something went wrong. Please contact the page administrator.', 'satisfacao') . '</div>';
       }
 
       if ($this->setSatisfactionSurveyAnswer($ticket_id, (int)($_GET['satisfactionLevel'] ?? 0))) {
-         return '<div style="text-align: center;">' . __('Sua resposta foi salva. Obrigado por preencher a pesquisa de satisfação.', 'satisfacao') . '</div>';
+         return '<div style="text-align: center;">' . __('Your response has been saved. Thank you for completing the satisfaction survey.', 'satisfacao') . '</div>';
       }
 
-      return '<div style="text-align: center;">' . __('Desculpe, não podemos salvar sua resposta. Entre em contato com o administrador da página.', 'satisfacao') . '</div>';
+      return '<div style="text-align: center;">' . __('Sorry, we could not save your response. Please contact the page administrator.', 'satisfacao') . '</div>';
    }
 
    private function setSatisfactionSurveyAnswer($ticket_id, int $answer): bool

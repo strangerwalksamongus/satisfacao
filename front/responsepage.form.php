@@ -7,7 +7,7 @@ if (!$plugin->isInstalled('satisfacao') || !$plugin->isActivated('satisfacao')) 
    Html::displayNotFoundError();
 }
 
-Html::header(__('Pesquisa de satisfação', 'satisfacao'), $_SERVER['PHP_SELF'], "helpdesk");
+Html::header(__('Satisfaction survey', 'satisfacao'), $_SERVER['PHP_SELF'], "helpdesk");
 
 
 $object = new PluginSatisfacaoResponsePage();

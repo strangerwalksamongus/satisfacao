@@ -3,7 +3,7 @@
 function plugin_satisfacao_install() {
     global $DB, $LANG;
 
-    // Configurações
+    // Configuration
     if (!$DB->TableExists("glpi_plugin_satisfacao_hashes")) {
         $query_conf = "
             CREATE TABLE `glpi_plugin_satisfacao_hashes` (
@@ -14,16 +14,16 @@ function plugin_satisfacao_install() {
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
         ";
 
-        $DB->query($query_conf) or die("Erro ao criar tabela glpi_plugin_satisfacao_hashes: " . $DB->error());
+        $DB->query($query_conf) or die("Error creating table glpi_plugin_satisfacao_hashes: " . $DB->error());
     }
 
     return true;
 }
 
 /**
- * Ao criar uma tabela, não se esqueça de excluí-la se o plugin for desinstalado.
+ * When creating a table, don't forget to drop it if the plugin is uninstalled.
  *
- * @return boolean Retorna true se tiver sucesso
+ * @return boolean Returns true on success
  */
 function plugin_satisfacao_uninstall() {
     global $DB;

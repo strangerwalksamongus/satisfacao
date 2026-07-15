@@ -30,7 +30,7 @@ class PluginSatisfacaoMailTemplate
    }
 
    /**
-    * Retorna o esqueleto HTML da pesquisa de satisfação para email.
+    * Returns the HTML skeleton of the satisfaction survey for email.
     *
     * @param PluginSatisfacaoSurveyLink $satisfaction_survey_direct_vote_link
     * @return string
@@ -57,7 +57,7 @@ class PluginSatisfacaoMailTemplate
    }
 
    /**
-    * Codifica a imagem para o email da pesquisa de satisfação.
+    * Encodes the image for the satisfaction survey email.
     *
     * @param string $file_name
     * @return string

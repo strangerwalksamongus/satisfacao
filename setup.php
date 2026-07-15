@@ -3,7 +3,7 @@
 function plugin_version_satisfacao()
 {
    return [
-      'name' => 'Satisfacao',
+      'name' => 'Satisfaction',
       'version' => '1.0.0', 
       'author' => '<a href="https://github.com/isaque-silva">Isaque Silva</a>',
       'license' => 'GPLv3', 
@@ -17,8 +17,8 @@ function plugin_version_satisfacao()
 }
 
 /**
- * Inicializa os hooks do plugin.
- * OBRIGATÓRIO
+ * Initializes the plugin hooks.
+ * REQUIRED
  *
  * @return void
  */

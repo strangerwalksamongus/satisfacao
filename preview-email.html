@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+  PREVIEW ONLY — this is a static mock of the HTML that
+  PluginSatisfacaoMailTemplate::getSatisfactionSurveySkeleton() generates
+  (inc/mailtemplate.class.php, lines 41-54).
+
+  The <a href> values here are dummies ("#level-N"); in the real plugin each
+  is the per-ticket survey link + "&satisfactionLevel=N".
+  The <img src> points at the real local PNGs in ./img so you can see the faces.
+
+  Edit the markup inside <div class="satisfaction-survey"> to redesign the
+  email block, then port your changes back into getSatisfactionSurveySkeleton().
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Satisfaction — email preview</title>
+  <style>
+    /* Just to frame the preview like an email body — NOT part of the plugin output */
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 40px; }
+    .email-frame {
+      max-width: 600px; margin: 0 auto; background: #fff;
+      border: 1px solid #ddd; border-radius: 6px; padding: 32px;
+    }
+    .email-frame h2 { color: #333; font-size: 18px; }
+    .email-frame p  { color: #555; font-size: 14px; line-height: 1.5; }
+    .note { max-width: 600px; margin: 16px auto 0; color: #888; font-size: 12px; }
+  </style>
+</head>
+<body>
+
+  <div class="email-frame">
+    <h2>Satisfaction survey</h2>
+    <p>Your ticket has been resolved. How would you rate the support? Click one of the options below:</p>
+
+    <!-- ==== BEGIN plugin-generated block (getSatisfactionSurveySkeleton) ==== -->
+    <div class="satisfaction-survey" style="text-align: center;">
+      <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block;">
+        <tr>
+          <td style="padding-right: 10px;">
+            <a href="#level-1"><img src="img/SmileyFace1.png" alt="1/5" width="30"></a>
+          </td>
+          <td style="padding-right: 10px;">
+            <a href="#level-2"><img src="img/SmileyFace2.png" alt="2/5" width="30"></a>
+          </td>
+          <td style="padding-right: 10px;">
+            <a href="#level-3"><img src="img/SmileyFace3.png" alt="3/5" width="30"></a>
+          </td>
+          <td style="padding-right: 10px;">
+            <a href="#level-4"><img src="img/SmileyFace4.png" alt="4/5" width="30"></a>
+          </td>
+          <td style="padding-right: 10px;">
+            <a href="#level-5"><img src="img/SmileyFace5.png" alt="5/5" width="30"></a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- ==== END plugin-generated block ==== -->
+
+  </div>
+
+  <p class="note">
+    Preview only. Links are dummies; images load from ./img. Faces render at width=30 like the real email.
+  </p>
+
+</body>
+</html>

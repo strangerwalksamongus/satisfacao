@@ -1,53 +1,53 @@
 
-# GLPI Satisfação - Plugin de Pesquisa de Satisfação
+# GLPI Satisfaction - Satisfaction Survey Plugin
 
-Este plugin para o **GLPI** permite que os usuários respondam à pesquisa de satisfação diretamente a partir de um e-mail, sem a necessidade de fazer login no sistema. Simplifica a coleta de feedback e melhora a experiência do usuário.
+This plugin for **GLPI** lets users answer the satisfaction survey directly from an email, without needing to log in to the system. It simplifies feedback collection and improves the user experience.
 
-## Funcionalidades
+## Features
 
-- Envio de pesquisas de satisfação automáticas via e-mail.
-- Respostas podem ser enviadas com um único clique, diretamente no corpo do e-mail.
-- Não é necessário que o destinatário esteja logado no GLPI para responder à pesquisa.
+- Automatic satisfaction surveys sent via email.
+- Responses can be submitted with a single click, directly from the email body.
+- The recipient does not need to be logged in to GLPI to answer the survey.
 
-## Requisitos
+## Requirements
 
-- GLPI versão 10.0 ou superior.
+- GLPI version 10.0 or higher.
 
-## Instalação
+## Installation
 
-1. Faça o download ou clone o repositório do plugin no seu servidor GLPI:
+1. Download or clone the plugin repository on your GLPI server:
    ```bash
    git clone https://github.com/isaque-silva/satisfacao.git
    ```
 
-2. Mova a pasta do plugin para o diretório de plugins do GLPI:
+2. Move the plugin folder into the GLPI plugins directory:
    ```bash
-   mv satisfacao /seu-caminho/glpi/plugins/
+   mv satisfacao /your-path/glpi/plugins/
    ```
 
-3. No painel administrativo do GLPI, vá até **Configurar > Plugins** e ative o plugin de satisfação.
+3. In the GLPI admin panel, go to **Setup > Plugins** and activate the satisfaction plugin.
 
-## Configuração
+## Configuration
 
-Após ativar o plugin, configure a pesquisa de satisfação da seguinte forma:
+After activating the plugin, configure the satisfaction survey as follows:
 
-1. No e-mail de pesquisa de satisfação, utilize a variável:
+1. In the satisfaction survey email, use the tag:
    ```
    ##ticket.satisfacao##
    ```
 
-2. Ao enviar o e-mail, o usuário receberá as seguintes imagens com links para responder diretamente à pesquisa:
+2. When the email is sent, the user will receive the following images with links to answer the survey directly:
 
    ![image](https://github.com/user-attachments/assets/69e4ac8c-6b97-48c2-a27a-f88e81ffcc56)
 
-   As imagens representarão as opções de resposta (satisfação, insatisfação, etc.) com links personalizados para o envio da resposta.
+   The images represent the response options (satisfied, dissatisfied, etc.) with personalized links for submitting the response.
 
-## Como Funciona
+## How It Works
 
-1. Quando um ticket for resolvido ou fechado, o GLPI enviará automaticamente um e-mail de pesquisa de satisfação ao solicitante.
-2. O e-mail conterá um conjunto de imagens com links para que o usuário possa escolher seu nível de satisfação com apenas um clique.
-3. Após a escolha, a resposta será registrada diretamente no GLPI, sem a necessidade de login.
+1. When a ticket is resolved or closed, GLPI automatically sends a satisfaction survey email to the requester.
+2. The email contains a set of images with links so the user can choose their satisfaction level with just one click.
+3. After the choice, the response is recorded directly in GLPI, with no need to log in.
 
-## Contribuição
+## Contributing
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um **pull request** ou relatar um problema na [página de issues](https://github.com/isaque-silva/satisfacao/issues).
+Contributions are welcome! Feel free to open a **pull request** or report a problem on the [issues page](https://github.com/isaque-silva/satisfacao/issues).

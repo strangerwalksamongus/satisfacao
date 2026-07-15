@@ -48,10 +48,10 @@ class PluginSatisfacaoSurveyLink
    }
 
    /**
-    * Retorna o link direto da pesquisa de satisfação com o valor do nível de satisfação.
+    * Returns the direct satisfaction survey link with the satisfaction level value.
     *
     * @param int $satisfaction_level
-    *   Valor do nível de satisfação de 1 a 5.
+    *   Satisfaction level value from 1 to 5.
     *
     * @return string
     * @throws Exception
@@ -59,7 +59,7 @@ class PluginSatisfacaoSurveyLink
    public function getSatisfactionSurveyLinkForMailTemplate(int $satisfaction_level): string
    {
       if ($satisfaction_level > 5 || $satisfaction_level < 1) {
-         throw new Exception("Valor inválido do nível de satisfação. O valor deve estar entre 1 e 5.");
+         throw new Exception("Invalid satisfaction level value. The value must be between 1 and 5.");
       }
 
       return $this->satisfaction_survey_link . sprintf('&satisfactionLevel=%d', $satisfaction_level);
